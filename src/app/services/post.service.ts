@@ -12,10 +12,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PostService {
-  postsUrl:string = 'https://jsonplaceholder.typicode.com/posts?_limit=5';
+  postsUrl:string = 'https://jsonplaceholder.typicode.com/posts';
+  postsLimit = '?_limit=5';
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]> {
-    return this.http.get<Post[]>(this.postsUrl);
+    return this.http.get<Post[]>(`${this.postsUrl}${this.postsLimit}`);
+  }
+
+  addPost(post:Post):Observable<Post> {
+    return this.http.post<Post>(this.postsUrl, post, httpOptions);
   }
 }

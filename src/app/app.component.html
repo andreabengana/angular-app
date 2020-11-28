@@ -84,11 +84,10 @@
 
   .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    
   }
+  
 
   .card {
     border-radius: 4px;
@@ -98,7 +97,7 @@
     width: 400px;
     margin: 0 8px 16px;
     padding: 16px;
-    display: flex;  
+    display: grid;  
     flex-direction: row;
     justify-content: left;
     align-items: left;
@@ -344,14 +343,14 @@
 
   <div class="card-container">
 
-    <a class="card" target="_blank" rel="noopener" href="">
+    <div class="card" >
 
       <router-outlet></router-outlet>
 
-    </a>
+    </div>
 
   </div>
-
+  
   <!-- Next Steps 
   <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>

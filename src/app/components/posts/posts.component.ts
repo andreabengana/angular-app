@@ -19,4 +19,10 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  addPost(post:Post) {
+    this.postService.addPost(post).subscribe(post => {
+      this.posts.push(post);
+    });
+  }
+
 }
