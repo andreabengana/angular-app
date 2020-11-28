@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class PostService {
   postsUrl:string = 'https://jsonplaceholder.typicode.com/posts';
-  postsLimit = '?_limit=5';
+  postsLimit = '?_limit=6';
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]> {
