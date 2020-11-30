@@ -14,20 +14,21 @@ const httpOptions = {
 })
 export class PostService {
   //postsUrl:string = 'https://jsonplaceholder.typicode.com/posts';
-  postsUrl:string = 'http://localhost:4000/posts';
-  postsLimit = '?_limit=6';
+  postsUrl:string = 'http://localhost:4000/';
+  postsGet = 'posts';
+  postsSave = 'save';
   post!:Post;
   private postSource = new BehaviorSubject('def');
   currentPost = this.postSource.asObservable();
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]> {
-    //return this.http.get<Post[]>(`${this.postsUrl}${this.postsLimit}`);
-    return this.http.get<Post[]>(`${this.postsUrl}`);
+    return this.http.get<Post[]>(`${this.postsUrl}${this.postsGet}`);
+    //return this.http.get<Post[]>(`${this.postsUrl}`);
   }
 
   addPost(post:Post):Observable<Post> {
-    return this.http.post<Post>(this.postsUrl, post, httpOptions);
+    return this.http.post<Post>(`${this.postsUrl}${this.postsSave}`, post);
   }
 
   transferPost(post:Post) {

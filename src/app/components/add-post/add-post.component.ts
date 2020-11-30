@@ -21,6 +21,8 @@ export class AddPostComponent implements OnInit {
     }
 
     this.addPost.emit(post);
+    
+    window.location.reload();
   }
 
 }

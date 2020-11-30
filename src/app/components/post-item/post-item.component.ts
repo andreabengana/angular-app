@@ -17,7 +17,7 @@ export class PostItemComponent implements OnInit {
     this.postService.currentPost.subscribe(message => this.message = message)
   }
 
-  newMessage() {
+  editMessage() {
     this.postService.transferPost(this.post);
   }
 }
