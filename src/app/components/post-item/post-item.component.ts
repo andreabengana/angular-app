@@ -10,9 +10,14 @@ export class PostItemComponent implements OnInit {
   @Input()
   post: Post = new Post;
 
+  message!:string;
   constructor(private postService:PostService) { }
 
   ngOnInit() {
+    this.postService.currentPost.subscribe(message => this.message = message)
   }
 
+  newMessage() {
+    this.postService.transferPost(this.post);
+  }
 }
