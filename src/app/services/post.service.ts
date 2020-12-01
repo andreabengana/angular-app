@@ -21,7 +21,7 @@ export class PostService {
 
   post!:Post;
 
-  private postSource = new BehaviorSubject('def');
+  private postSource = new BehaviorSubject('');
   currentPost = this.postSource.asObservable();
 
   private postIDSource = new BehaviorSubject(4);

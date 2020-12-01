@@ -1,0 +1,35 @@
+.pane-container {
+    display: flex;
+    justify-content: space-between;
+}
+.pane {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: auto;
+    width: 400px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+}
+.pane2 {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 100px;
+    width: 400px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    
+}
+.component-add {
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
