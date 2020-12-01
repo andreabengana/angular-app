@@ -17,9 +17,13 @@ export class PostService {
   postsUrl:string = 'http://localhost:4000/';
   postsGet = 'posts';
   postsSave = 'save';
+  postsEdit = 'update';
+
   post!:Post;
+
   private postSource = new BehaviorSubject('def');
   currentPost = this.postSource.asObservable();
+
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]> {
@@ -33,5 +37,10 @@ export class PostService {
 
   transferPost(post:Post) {
     this.postSource.next(post.title);
+  }
+
+  editPost(post:Post):Observable<Post> {
+    //unsure if it will return post.id on Post model
+    return this.http.post<Post>(`${this.postsUrl}${this.postsEdit}`, post);
   }
 }

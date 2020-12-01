@@ -14,7 +14,7 @@ export class PostItemComponent implements OnInit {
   constructor(private postService:PostService) { }
 
   ngOnInit() {
-    this.postService.currentPost.subscribe(message => this.message = message)
+    this.postService.currentPost.subscribe(message => this.message = this.post.title)
   }
 
   editMessage() {

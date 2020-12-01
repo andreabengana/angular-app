@@ -1,17 +1,18 @@
 .form {
     display: flex;
     /*grid-template-columns: repeat(2, 1fr);*/
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: inherit;
+    justify-content: space-between;
     margin-top: 16px;
 }
 
 .form input[type='text'] {
-    flex: 10;
+    flex: 12;
     padding: 5px;
 
 }
 
 .form input[type='submit'] {
     flex: 2;
+    
 }
