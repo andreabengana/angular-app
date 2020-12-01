@@ -9,12 +9,13 @@ import { Post } from 'src/app/models/Post'
 export class PostItemComponent implements OnInit {
   @Input()
   post: Post = new Post;
-
+  id!:number;
   message!:string;
   constructor(private postService:PostService) { }
 
   ngOnInit() {
     this.postService.currentPost.subscribe(message => this.message = this.post.title)
+    this.postService.currentIDPost.subscribe(id => this.id = this.post.id)
   }
 
   editMessage() {

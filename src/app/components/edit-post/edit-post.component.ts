@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PostService } from '../../services/post.service';
-import { Post } from 'src/app/models/Post'
 
 @Component({
   selector: 'app-edit-post',
@@ -9,24 +8,26 @@ import { Post } from 'src/app/models/Post'
 })
 export class EditPostComponent implements OnInit {
   @Output() editPost: EventEmitter<any> = new EventEmitter();
-  post!: Post;
+  id!:number
   message!:string;
   constructor(private postService:PostService) { }
 
   ngOnInit(): void {
     this.postService.currentPost.subscribe(message => this.message = message)
+    this.postService.currentIDPost.subscribe(id => this.id = id)
   }
 
   onEditSubmit(){
     const post = {
-      id: this.post.id,
-      title: this.post.title,
-
+      "id" : 4,
+      "title" : this.message
     }
-
+    console.log(post);
     this.editPost.emit(post);
-    
-    window.location.reload();
+    console.log(post);
+    //window.location.reload();
   }
+
+  
 
 }

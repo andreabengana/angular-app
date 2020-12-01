@@ -24,6 +24,9 @@ export class PostService {
   private postSource = new BehaviorSubject('def');
   currentPost = this.postSource.asObservable();
 
+  private postIDSource = new BehaviorSubject(4);
+  currentIDPost = this.postIDSource.asObservable();
+
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]> {
@@ -37,10 +40,12 @@ export class PostService {
 
   transferPost(post:Post) {
     this.postSource.next(post.title);
+    this.postIDSource.next(post.id);
   }
 
   editPost(post:Post):Observable<Post> {
     //unsure if it will return post.id on Post model
+    console.log("foo");
     return this.http.post<Post>(`${this.postsUrl}${this.postsEdit}`, post);
   }
 }
