@@ -1,1 +1,7 @@
-<p>{{ post.title }}</p>
+<div class="todo">
+    <p>
+        {{ post.title }}
+        <button (click)="editMessage()">Edit</button>
+        <button class="del">X</button>
+    </p>
+</div>

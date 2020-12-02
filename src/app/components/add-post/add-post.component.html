@@ -1,1 +1,4 @@
-<p>add-post works!</p>
+<form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Add Post">
+    <input type="submit" value="Submit" class="btn">
+</form>

@@ -1,0 +1,7 @@
+<!--<input type = "text" id = "myText"  />-->
+
+<form class="form" (ngSubmit)="onEditSubmit()">
+    
+    <input type="text" name="title" [(ngModel)]="message" value = {{message}}>
+    <input type="submit" value="Submit" class="btn">
+</form>
